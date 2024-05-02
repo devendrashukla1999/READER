@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="zxx">
+{% load static %}
+<!-- Mirrored from templates.envytheme.com/qfix/default/sign-up.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 08 Apr 2022 12:04:20 GMT -->
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap Min CSS -->
+    <link href='{% static "css/bootstrap.css" %}' type="text/css" rel="stylesheet" media="all">
+    <!-- Add to Cart css -->
+    <link href='{% static "css/Add to Cart.css"%}' type="text/css" rel="stylesheet" media="all">
+    <link href='{% static "css/style.css"%}' type="text/css" rel="stylesheet" media="all">
+    <!-- font-awesome icons -->
+    <link href='{% static "css/font-awesome.css"%}' rel="stylesheet">
+    <!-- //Custom Theme files -->
+    <!-- online-fonts -->
+    <!-- logo -->
+    <link href='{% static "http://fonts.googleapis.com/css?family=Fredericka+the+Great"%}' rel="stylesheet">
+    <!-- titles -->
+    <link href='{% static "http://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i,800,800i"%}' rel="stylesheet">
+    <!-- body -->
+    <link href='{% static "http://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"%}' rel="stylesheet">
+    <!-- //online-fonts -->
+
+    <!-- Start Page Title Area -->
+    <div class="page-title-area bg-4">
+        <div class="container">
+            <div class="page-title-content">
+                <h2>Sign Up</h2>
+            </div>
+        </div>
+    </div>
+    <!-- End Page Title Area -->
+    <div id="home">
+        <!-- header -->
+        <!--navbar -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="main-nav">
+                <div class="container">
+
+                    <div class="navbar-header page-scroll">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+								<span class="sr-only">Reader</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+                        <h1>
+                            <a class="navbar-brand" href="{% url 'index' %}">Reader</a>
+                        </h1>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse navbar-ex1-collapse nav-right">
+                        <ul class="nav navbar-nav navbar-left cl-effect-15">
+                            <!-- Hidden li included to remove active class from registration link when scrolled up past registration section -->
+                            <li class="hidden">
+                                <a class="page-scroll" href="#page-top"></a>
+                            </li>
+                            <li><a href="{% url 'index' %}">Home</a></li>
+                            <li><a href="{% url 'about' %}">About us</a></li>
+                            <li class="dropdown">
+                                <a href="{% url 'index3929' %}" class="dropdown-toggle effect-3" data-toggle="dropdown">Books
+                                    <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{% url 'cart' %}">Cart</a></li>
+                                    <li><a href="{% url 'payment' %}">Payment</a></li>
+                                    <li><a href="{% url 'feedback' %}">Feedback</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="{% url 'contact' %}">Contact us</a>
+                            </li>
+                            <li class="dropdown">
+                                {% if user.is_authenticated %}
+                                <a href="{% url 'log' %}" class="dropdown-toggle effect-3" data-toggle="dropdown">Hi {{ user.username }}
+                                    <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{% url 'pro' %}">My Profile</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="{% url 'lgt' %}">Logout</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'pro' %}" title="{{user.username}}">
+                                    <span class="fa fa-user nav-icon" aria-hidden="true"></span>
+                                </a>
+                            </li>
+                            {% else %}
+
+                            <li>
+                                <a href="{% url 'log' %}">Sign In</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'reg' %}" title="SignIn & SignUp">
+                                    <span class="fa fa-user nav-icon" aria-hidden="true"></span>
+                                </a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                        <!-- search-bar -->
+                        <div class="search-bar-agileits">
+                            <div class="cd-main-header">
+                                <ul class="cd-header-buttons">
+                                    <li>
+                                        <a class="cd-search-trigger" href="#cd-search">
+                                            <span></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!-- cd-header-buttons -->
+                            </div>
+                            <div id="cd-search" class="cd-search">
+                                <form action="{% url 'ser' %}" method="post">
+                                    {% csrf_token %}
+                                    <input name="ser" type="text" placeholder="Type and Hit Enter...">
+                                </form>
+                            </div>
+                        </div>
+                        <!-- //search-bar ends here -->
+                        <!-- Subscriptionping cart -->
+                        <div class="cart-mainf">
+                            <div class="chrcart chrcart2 cart cart box_1">
+                                <form action="#" method="post" class="last">
+                                    <input type="hidden" name="cmd" value="_cart">
+                                    <input type="hidden" name="display" value="1">
+                                    <button class="top_chr_cart" type="submit" name="submit" value="">
+											<i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+										</button>
+                                </form>
+                            </div>
+                        </div>
+                        <!--//Subscriptionping cart ends here -->
+                    </div>
+                    <!-- /.navbar-collapse -->
+                    <div class="clearfix"></div>
+                </div>
+                <!-- /.container -->
+            </div>
+        </nav>
+        <!-- //navbar ends here -->
+        <!-- banner -->
+        <div class="banner-bg-inner">
+            <!-- banner-text -->
+            <div class="banner-text-inner">
+                <div class="container">
+                    <h2 class="title-inner">
+                        world of reading
+                    </h2>
+
+                </div>
+            </div>
+            <!-- //banner-text -->
+        </div>
+        <!-- //banner -->
+        <!-- breadcrumbs -->
+        <div class="crumbs text-center">
+            <div class="container">
+                <div class="row">
+                    <ul class="btn-group btn-breadcrumb bc-list">
+                        <li class="btn btn1">
+                            <a href="{% url 'index' %}">
+                                <i class="glyphicon glyphicon-home"></i>
+                            </a>
+                        </li>
+                        <!--<li class="btn btn2">
+								<a href="{% url 'about' %}">About us</a>
+							</li>-->
+                        <li class="btn btn2">
+                            <a href="{% url 'cart' %}">Cart </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--//breadcrumbs ends here-->
+
+        <div class="main-wrapper">
+
+            <!-- Preloader Start  -->
+            <div class="preloader">
+                <div class="loader"></div>
+            </div>
+            <!-- Preloader End  -->
+
+            <!-- Header Start 
+            <div id="header" class="header section">
+                <div class="container">
+                     Header Wrapper Start  
+                    <div class="header-wrapper">-->
+                        <!-- Header Logo Start -
+                        <div class="header-logo">
+                            <a href="{% url 'index' %}"><img src='{% static "assets/images/logo.png" %}' alt=""></a>
+                        </div>-->
+                        <!-- Header Logo End -->
+                        <!-- Header Menu Start -->
+                        <!-- Header Meta Start-->
+                       <!----<div class="header-meta">
+                            <div class="header-toggle d-lg-none">
+                                <button data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                            </div>
+                        </div>
+                        Header Meta End 
+                    </div>
+                    Header Wrapper End 
+                </div>
+            </div> -->
+            {% if user.is_superuser %}
+            <h1 class="jumbotron my-3">You are not allowed here</h1>
+            {% else %} {% if items|length == 0 %}
+            <div class="container-fluid">
+                <!--<div class="jumbotron alert alert-danger">
+                    &times; You have not taken subscription!!
+                </div>-->
+            </div>
+            {% endif %}
+            <div class="section section-padding-02">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <table class="table cart">
+                                <thead>
+                                    <tr>
+                                        <th>Image</th>
+                                        <th>Book name</th>
+                                        <th>Service Price</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for i in item %}
+                                    <tr id="row{{i.id}}">
+                                        <td><img src="{{ i.cour.image.url }}" style="height:100px;width:150px;" class="img-fluid"></td>
+                                        <td>{{i.cour.Books_name}}</td>
+                                        <td> &#8377; {{i.cour.price}}</td>
+                                        <td>{{i.quantity}}</td>
+                                        <!--<td> <span id="sp{{i.id}}"> {{i.quantity}}</span></td>-->
+                                        <td><a href="{% url 'cart' %}"><i class="btn btn-danger ml-1 fa fa-trash" value="remove" onclick="remove('{{i.id}}')"></i></a></td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                        </div>
+                        </table>
+                        <div class="p-3">
+                            <a href="{% url 'process_payment' %}" class="btn btn-success btn-block btn-sm"><span id="btamt"></span>
+                                <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+                                    <input type="hidden" name="cmd" value="_xclick" id="id_cmd"><input type="hidden" name="charset" value="utf-8" id="id_charset">
+                                    <input type="hidden" name="currency_code" value="USD" id="id_currency_code">
+                                    <input type="hidden" name="no_shipping" value="1" id="id_no_shipping">
+                                    <input type="hidden" name="business" value="animeshrana75@gmail.com" id="id_business">
+                                    <input type="hidden" name="amount" value="12.987012987012987" id="id_amount">
+                                    <input type="hidden" name="item_name" value="Solar Panel" id="id_item_name">
+                                    <input type="hidden" name="invoice" value="INV10001-5" id="id_invoice"><input type="hidden" name="notify_url" value="http://127.0.0.1:8000/paypal/" id="id_notify_url">
+                                    <input type="hidden" name="cancel_return" value="http://127.0.0.1:8000/payment_cancelled" id="id_cancel_return">
+                                    <input type="hidden" name="return" value="http://127.0.0.1:8000/payment_done" id="id_return">
+                                    <input type="image" src="https://www.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" name="submit" alt="Buy it Now">
+                                </form>
+                            </a>
+                        </div>
+
+                        <section id="content" class="content col-sm-8 col-md-9">
+                            <h2 class="text-center">CHECKOUT</h2>
+                            <table class="table">
+                                <tr>
+                                    <td>Quantity</td>
+                                    <td id="quantity"></td>
+                                </tr>
+                                <tr>
+                                    <td>GRAND TOTAL</td>
+                                    <td id="total"></td>
+                                </tr>
+                            </table>
+                        </section>
+                        <!-- <div class="row col-lg-4">
+                            <div class="p-3 col-lg-4"></div>
+                            <div class="p-3 col-lg-6">
+                                <a href="#" class="btn btn-success btn-block btn-sm">PROCEED TO PAY<span id="btamt"></span></a>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+
+        <!--============================================ -->
+        <script>
+            function remove(id) {
+                $.ajax({
+                    url: "{% url 'cart' %}",
+                    data: {
+                        delete_cart: id
+                    },
+                    success: function(data) {
+                        $("#row" + id).hide();
+                    }
+                })
+            }
+
+            function total() {
+                $.ajax({
+                    url: "{% url 'cart' %}",
+                    type: "get",
+                    success: function(data) {
+                        save = data.tot;
+                        $("#quantity").html(data.quan + "item");
+                        $("#total").html("&#8377;" + data.tot);
+                    }
+                })
+            }
+            total();
+        </script>
+        <!-- //footer-layouts -->
+        <!-- footer -->
+        <div class="footer-bottom section">
+            <div class="container">
+                <!-- newsletter -->
+                <div class="subscribe-main section-reader text-center">
+                    <h4 class="rad-txt">
+                        <span class="abtxt1">keep yourself</span>
+                        <span class="abtext">updated</span>
+                    </h4>
+                    <h5>subscribe to our newsletter to stay up-to-date with our projects.</h5>
+                    <div class="subscribe-form">
+                        <form action="#" method="post" class="subscribe_form">
+                            <div class="email-news">
+                                <input type="email" placeholder="Email" required="">
+                            </div>
+                            <div class="sub-news">
+                                <input type="submit" value="subscribe">
+                            </div>
+                        </form>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <p>We respect your privacy.No spam ever!</p>
+                </div>
+                <!-- //newsletter ends here -->
+                <!-- footer grids-->
+                <div class="footer-cpy">
+                    <!-- footer-grid1 -->
+                    <div class="col-md-3 col-sm-6 footer-logo">
+                        <h3>
+                            <a href="{% url 'index' %}">Reader</a>
+                        </h3>
+                        <h4>about us</h4>
+                        <p>We inspire and enable independent minds, providing resources, spaces and technologies.</p>
+                    </div>
+                    <!-- //footer-grid1 -->
+                    <!-- footer-grid2 -->
+                    <div class="col-md-3 col-sm-6 footer-nav text-center">
+                        <h4>navigation</h4>
+                        <ul>
+                            <li>
+                                <a href="{% url 'index' %}">Home</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'about' %}">About us</a>
+                            </li>
+                            <li><a href="{% url 'addbk' %}">Add Book</a></li>
+                            <li>
+                                <a href="{% url 'contact' %}">contact us</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //footer-grid2 -->
+                    <!-- footer-grid3 -->
+                    <div class="col-md-3 col-sm-6 blog-footer">
+                        <h4>latest from blog</h4>
+                        <div class="blog1">
+                            <div class="col-md-3 col-sm-3 col-xs-2 bl1">
+                                <a href="#">
+                                    <img src='{% static "images/b1.jpg" %}' alt="" class="img-responsive" />
+                                </a>
+                            </div>
+                            <div class="col-md-9 col-sm-9 col-xs-10 bl2">
+                                <a href="#">Devendra shukla5742 by instagram</a>
+                                <p>March 22, 2022</p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="blog1">
+                            <div class="col-md-3 col-sm-3 col-xs-2 bl1">
+                                <a href="#">
+                                    <img src='{% static "images/b2.jpg" %}' alt="" class="img-responsive" />
+                                </a>
+                            </div>
+                            <div class="col-md-9 col-sm-9 col-xs-10 bl2">
+                                <a href="#">rahulkumar9302 by instagram</a>
+                                <p>March 24, 2022</p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <!-- //footer-grid3 -->
+                    <!-- footer-grid4 -->
+                    <div class="col-md-3 col-sm-6 contact-foot text-right">
+                        <h4>contact us</h4>
+                        <ul>
+                            <li>
+                                <span class="fa fa-home"></span> Dayal Residency Lucknow
+                                <br> Uttar Pradesh India.
+                            </li>
+                            <li>
+                                <span class="fa fa-phone"></span> +91 8887505548, 8299119833.
+                            </li>
+                            <li>
+                                <span class="fa fa-envelope"></span>
+                                <a href="mailto:info@reader.com">mail@Reader.com</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //footer-grid4 -->
+                    <div class="clearfix"></div>
+                </div>
+                <!-- //footer-grids -->
+                <!-- footer social -->
+                <div class="footer-social text-center">
+                    <h4>stay connected</h4>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <span class="fa fa-facebook icon_facebook"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa fa-twitter icon_twitter"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa fa-dribbble icon_dribbble"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa fa-google-plus icon_g_plus"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- //footer social -->
+            </div>
+            <!-- //footer container -->
+        </div>
+        <!-- //footer -->
+        <div class="cpy-right">
+            <p>© 2022 Reader. All rights reserved | Design by
+                <a href="http://reader.com/"> Rahul Kr.</a>
+            </p>
+        </div>
+    </div>
+    <!-- //home -->
+    <!-- Jquery Min JS -->
+    <script data-cfasync="false" src='{% static "../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js" %}'></script>
+    <script src='{% static "assets/js/jquery.min.js" %}'></script>
+    <!-- Bootstrap Min JS -->
+    <script src='{% static "assets/js/bootstrap.bundle.min.js" %}'></script>
+    <!-- Meanmenu Min JS -->
+    <script src='{% static "assets/js/meanmenu.min.js" %}'></script>
+    <!-- Wow Min JS -->
+    <script src='{% static "assets/js/wow.min.js" %}'></script>
+    <!-- Owl Carousel Min JS -->
+    <script src='{% static "assets/js/owl.carousel.min.js" %}'></script>
+    <!-- Owl Magnific Min JS -->
+    <script src='{% static "assets/js/magnific-popup.min.js" %}'></script>
+    <!-- Nice Select Min JS -->
+    <script src='{% static "assets/js/nice-select.min.js" %}'></script>
+    <!-- jarallax Min JS -->
+    <script src='{% static "assets/js/jarallax.min.js" %}'></script>
+    <!-- Mixitup Min JS -->
+    <script src='{% static "assets/js/mixitup.min.js" %}'></script>
+    <!-- Appear Min JS -->
+    <script src='{% static "assets/js/appear.min.js" %}'></script>
+    <!-- Odometer Min JS -->
+    <script src='{% static "assets/js/odometer.min.js" %}'></script>
+    <!-- Form Ajaxchimp Min JS -->
+    <script src='{% static "assets/js/ajaxchimp.min.js" %}'></script>
+    <!-- Form Validator Min JS -->
+    <script src='{% static "assets/js/form-validator.min.js" %}'></script>
+    <!-- Contact JS -->
+    <script src='{% static "assets/js/contact-form-script.js" %}'></script>
+    <!-- Custom JS -->
+    <script src='{% static "assets/js/custom.js" %}'></script>
+    </body>
+
+    <!-- Mirrored from templates.envytheme.com/qfix/default/sign-up.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 08 Apr 2022 12:04:20 GMT -->
+
+</html>

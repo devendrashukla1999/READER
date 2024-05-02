@@ -1,0 +1,34 @@
+<!Doctype html>
+<html>
+<head>
+   <title></title>
+</head>
+<body>
+    <button onclick="myname()">click for name</button>
+    <p id="nm"></p>
+    <button onclick="add()">click for add</button>
+    <p id="ad"></p>
+    <button onclick="alrt()">click for alert</button>
+    <button onclick="pimg()">click for Image</button>
+    
+    <script>
+        function myname(){
+            a="ADITYA"
+            document.getElementById("nm").innerHTML=a;
+        }  
+          function add(){
+            let a=5;
+            let b=15;
+            document.getElementById("ad").innerHTML=a+b;
+        }  
+        function alrt(){
+            alert("this is a wrong")
+           }
+           function pimg(){
+           var i=document.createElement("IMG")
+           i.setAttribute("src","https://th.bing.com/th/id/R.98731c5da985ef97def66661f63d1a6a?rik=5o%2bI0tfHBwxm8Q&riu=http%3a%2f%2fwww.publicdomainpictures.net%2fpictures%2f40000%2fvelka%2ffluffy-clouds.jpg&ehk=Amz%2bdk6zKakKB%2fg3GBqiFnOoMHdmlrTTxboOl4Mt8pc%3d&risl=&pid=ImgRaw&r=0.jpg");
+           document.body.appendChild(i);
+           }
+    </script>
+</body>
+</html>
